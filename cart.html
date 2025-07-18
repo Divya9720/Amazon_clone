@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">amazon<span>.clone</span></div>
+    <a href="index.html" class="cart">⬅️ Back to Shop</a>
+  </header>
+
+  <main class="cart-page" id="cartItems"></main>
+  <h3 id="totalPrice"></h3>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartContainer = document.getElementById("cartItems");
+    const totalEl = document.getElementById("totalPrice");
+    let total = 0;
+
+    cart.forEach((item, i) => {
+      total += item.price;
+      cartContainer.innerHTML += `
+        <div class="product-card">
+          <img src="${item.image}" alt="Product">
+          <h3>${item.title}</h3>
+          <p>$${item.price}</p>
+        </div>
+      `;
+    });
+
+    totalEl.textContent = `Total: $${total.toFixed(2)}`;
+  </script>
+</body>
+</html>
