@@ -11,10 +11,6 @@ This project mimics an e-commerce platform UI and includes a cart system using `
 - Local cart with item count and summary
 - Clean and modern UI
 
-## 📷 Screenshots
-
-![Amazon Clone Screenshot](screenshot.png)
-
 ## 🛠️ Tech Stack
 
 - HTML5
